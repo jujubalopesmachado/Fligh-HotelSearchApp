@@ -1,0 +1,74 @@
+public class Flight {
+
+    String Destination;
+    String Origin;
+    Double Departure;
+    Double Arrival;
+    int FlightNumber;
+    String PassengerName;
+
+    int ConfirmationNum;
+
+    Flight(String Origin, String Destination, Double Departure, Double Arrival, int FlightNumber, String PassengerName){
+
+        this.Origin = Origin;
+        this.Destination = Destination;
+        this.Departure = Departure;
+        this.Arrival = Arrival;
+        this.FlightNumber = FlightNumber;
+        this.PassengerName = PassengerName;
+
+    }
+
+    public void GetFlightOrigin() {
+
+        this.Origin = Origin;
+
+        System.out.println(Origin);
+
+    }
+
+    public void GetFlightDestination() {
+
+        this.Destination = Destination;
+
+        System.out.println(Destination);
+
+    }
+
+    public void GetFlightDeparture() {
+
+        this.Departure = Departure;
+
+        System.out.println(Departure);
+
+    }
+
+    public void GetFlightArrival() {
+
+        this.Arrival = Arrival;
+
+        System.out.println(Arrival);
+
+    }
+    public void GetFlightNumber() {
+
+        this.FlightNumber = FlightNumber;
+
+        System.out.println(FlightNumber);
+
+    }
+    public int GetConfirmationNumber(){
+
+        System.out.println(ConfirmationNum);
+
+        return ConfirmationNum;
+    }
+    public void SetConfirmationNumber(Integer ConfirmationNum){
+
+      this.ConfirmationNum = ConfirmationNum;
+
+    }
+
+
+}
