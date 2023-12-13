@@ -1,0 +1,95 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
+
+public class Expedia {
+
+    //Write a Java program to create a class with methods to search
+    // for flights and hotels, and to book and cancel reservations.
+
+
+    ArrayList <Flight> FindFlight = new ArrayList <Flight>();
+
+    ArrayList <Hotel> FindHotel = new ArrayList <Hotel>();
+
+    Expedia(){
+
+        this.FindFlight = new ArrayList<Flight>();
+
+        this.FindHotel = new ArrayList<Hotel>();
+    }
+    public void SearchFlight(String Origin, String Destination, Double Departure, int NumPassengers){
+
+        System.out.println("Searching for a flight from " + Origin + " to " + Destination + " for a total of " + NumPassengers + " leaving at " + Departure);
+    }
+    public void SearchHotel(String Location, int NumGuests, double Price, double CheckInDate){
+
+        System.out.println("Searching for a hotel in " + Location + " for " + NumGuests + " guests, and costing " + Price + " checking in at " + CheckInDate);
+    }
+
+    public int BookFlight(int FlightNumber, String PassengerName, String Origin, String Destination, double Departure, double Arrival){ //Another way of saying add?
+
+        Flight Flight1 = new Flight (Origin, Destination, Departure, Arrival, FlightNumber, PassengerName );
+
+        Random rand = new Random();
+
+        int FlightConfirmation = rand.nextInt(10000);
+
+        System.out.println("Your flight was booked. Here is the confirmation number: " + FlightConfirmation);
+
+        Flight1.SetConfirmationNumber(FlightConfirmation);
+
+        this.FindFlight.add(Flight1);
+
+        return FlightConfirmation;
+    }
+    public void CancelReservation(int FlightConfirmation) {
+        // Create an iterator for safe removal of elements while iterating
+        Iterator<Flight> iterator = this.FindFlight.iterator();
+
+        // Iterate over the list of flights
+        while (iterator.hasNext()) {
+            // Get the next flight in the list
+            Flight flight = iterator.next();
+
+            // Check if the confirmation number matches the provided one
+            if (flight.GetConfirmationNumber() == FlightConfirmation) {
+                // Remove the flight from the list
+                iterator.remove();
+
+                // Print a message indicating successful cancellation
+                System.out.println("Flight reservation with confirmation number " + FlightConfirmation + " cancelled.");
+
+                // Exit the loop after removing the reservation
+                return;
+            }
+
+        }
+        // Print a message indicating that no reservation was found with the provided confirmation number
+        System.out.println("No reservation found with confirmation number " + FlightConfirmation);
+
+    }
+
+        public void BookHotel (String Location, int HotelId, int NumGuests, double Price, double CheckInDate, double CheckOutDate){
+
+        Hotel hotel1 = new Hotel(Location, HotelId, NumGuests, Price, CheckInDate, CheckOutDate);
+
+        Random rand = new Random();
+
+        int HotelConfirmation = rand.nextInt(20000);
+
+        System.out.println("Your hotel confirmation code is: " + HotelConfirmation);
+
+        this.FindHotel.add(hotel1);
+
+
+    }
+
+
+
+
+
+
+
+
+}
