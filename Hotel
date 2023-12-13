@@ -1,0 +1,74 @@
+public class Hotel {
+
+    double CheckInDate;
+    double CheckOutDate;
+    int NumGuests;
+    double Price;
+    String Location;
+    int HotelId;
+    int ConfirmationCode;
+    Hotel(String Location, int HotelId, int NumGuests, double Price, double CheckInDate, double CheckOutDate){
+
+        this.Location = Location;
+        this.HotelId = HotelId;
+        this.NumGuests = NumGuests;
+        this.Price = Price;
+        this.CheckInDate = CheckInDate;
+        this.CheckOutDate = CheckOutDate;
+    }
+    public void GetHotelLocation(){
+
+        this.Location = Location;
+
+        System.out.println(Location);
+    }
+    public void GetHotelId(){
+
+        this.HotelId = HotelId;
+
+        System.out.println(HotelId);
+    }
+    public void GetNumGuests(){
+
+        this.NumGuests = NumGuests;
+
+        System.out.println(NumGuests);
+    }
+    public void GetPrice(){
+
+        this.Price = Price;
+
+        System.out.println(Price);
+
+    }
+    public void GetCheckIn(){
+
+        this.CheckInDate = CheckInDate;
+
+        System.out.println(CheckInDate);
+
+    }
+    public void GetCheckOut(){
+
+        this.CheckOutDate = CheckOutDate;
+
+        System.out.println(CheckOutDate);
+
+    }
+    public void GetConfirmationCode(){
+
+        System.out.println(ConfirmationCode);
+
+    }
+
+    public void SetConfirmationCode(Integer ConfirmationCode){
+
+        this.ConfirmationCode = ConfirmationCode;
+
+    }
+
+
+
+
+
+}
