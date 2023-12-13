@@ -1,0 +1,21 @@
+
+public class Main {
+    public static void main(String[] args) {
+
+        //Write a Java program to create a class with methods to search
+        // for flights and hotels, and to book and cancel reservations.
+
+        Expedia app = new Expedia();
+
+        app.SearchFlight("MCO", "DCA", 6.45, 2);
+        app.SearchHotel("NYC",2, 500.00,12.20);
+
+        app.BookFlight(9090, "Juju", "MCO", "DCA", 6.45, 8.0);
+        app.BookHotel("NYC", 4545, 2, 450.00,12.20, 12.21);
+
+        app.CancelReservation(4246);
+
+
+
+    }
+}
